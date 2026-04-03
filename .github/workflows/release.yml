@@ -58,14 +58,14 @@ jobs:
             ghcr.io/sevco/rust-linux-gnu-action:${{ env.TOOLCHAIN }}
       - name: Update version in actions.yml
         if: env.EXECUTE == 'true'
-        uses: jacobtomlinson/gha-find-replace@v2
+        uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: 'docker://ghcr.io/sevco/rust-linux-gnu-action:[^"]+'
           replace: "docker://ghcr.io/sevco/rust-linux-gnu-action:${{ env.TOOLCHAIN }}"
           include: "action.yml"
       - name: Update version in README
         if: env.EXECUTE == 'true'
-        uses: jacobtomlinson/gha-find-replace@v2
+        uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "sevco/rust-linux-gnu-action@.+"
           replace: "sevco/rust-linux-gnu-action@${{ env.TOOLCHAIN }}"
