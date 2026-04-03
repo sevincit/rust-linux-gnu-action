@@ -72,7 +72,7 @@ jobs:
           include: "README.md"
       - name: Commit and push
         if: env.EXECUTE == 'true'
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           message: "Updated actions container to ${{ env.TOOLCHAIN }}"
           committer_name: GitHub Actions
